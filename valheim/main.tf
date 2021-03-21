@@ -39,6 +39,10 @@ module_resource_dir='${var.module_resource_dir}'
 module_install_basedir='${var.module_install_basedir}'
 module_install_dir='${var.module_install_basedir}/${var.module_name}'
 module_install_log='${var.module_install_log}'
+
+# valheim properties
+server_name='${var.server_name}'
+server_password='${var.server_password}'
 PROPERTIES
 
     destination = "${var.module_resource_dir}/${var.module_name}/${var.module_properties}"

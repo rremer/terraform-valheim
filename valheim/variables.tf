@@ -15,3 +15,14 @@ variable "blocked_by" {
   description = "A string to block execution by via terraform graph dependency waits."
   default     = ""
 }
+
+variable "server_name" {
+  type        = "string"
+  description = "The name of the Valheim world."
+  default     = "valheim"
+}
+
+variable "server_password" {
+  type        = "string"
+  description = "The password for authenticating clients to the Valheim server."
+}

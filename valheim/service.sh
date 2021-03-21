@@ -6,9 +6,6 @@
 set -o nounset
 set -o errexit
 
-server_name=example
-server_pass=changethis123
-
 data_path="/var/lib/valheim/${server_name}"
 mkdir -p "${data_path}/config"
 mkdir -p "${data_path}/data"
@@ -21,5 +18,5 @@ podman run -i \
   -v ${data_path}/data:/opt/valheim \
   -e SERVER_NAME="${server_name}" \
   -e WORLD_NAME="${server_name}" \
-  -e SERVER_PASS="${server_pass}" \
+  -e SERVER_PASS="${server_password}" \
   docker.io/lloesche/valheim-server:latest

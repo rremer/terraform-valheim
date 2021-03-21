@@ -62,4 +62,6 @@ module "this" {
   connection_user        = "${local.connection_user}"
   connection_private_key = "${local.connection_private_key}"
   blocked_by             = "${module.aptdaemon.id}"
+  server_name            = "${var.server_name}"
+  server_password        = "${var.server_password}"
 }
