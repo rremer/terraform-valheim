@@ -32,3 +32,15 @@ In it's current form, there is a systemd service unit of the app, so you can:
 ```sh
 journalctl -fu valheim
 ```
+
+### Restoring from backup
+
+By default, backups of the world are zipped every hour under `/var/lib/valheim/valheim/config/backups`. If you override `${var.server_name}` to 'example' it would be `/var/lib/valheim/example/config/backups`.
+
+Using the 'example' world, say you have a zipped backup named `/tmp/worlds-20210321-020002.zip`. You would need to provision a new server or reusing an existing deployment, then:
+```sh
+service valheim stop
+pushd /var/lib/valheim/example/config
+unzip -o /tmp/worlds-20210321-020002.zip
+service valheim start
+```
