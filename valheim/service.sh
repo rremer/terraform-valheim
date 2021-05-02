@@ -19,4 +19,6 @@ podman run -i \
   -e SERVER_NAME="${server_name}" \
   -e WORLD_NAME="${server_name}" \
   -e SERVER_PASS="${server_password}" \
+  -e RESTART_CRON="0 10 * * *" \
+  -e SERVER_PUBLIC=false \
   docker.io/lloesche/valheim-server:latest
