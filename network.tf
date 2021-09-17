@@ -9,28 +9,12 @@ resource "google_compute_firewall" "app" {
 
   allow {
     protocol = "udp"
-    # TF-UPGRADE-TODO: In Terraform v0.10 and earlier, it was sometimes necessary to
-    # force an interpolation expression to be interpreted as a list by wrapping it
-    # in an extra set of list brackets. That form was supported for compatibility in
-    # v0.11, but is no longer supported in Terraform v0.12.
-    #
-    # If the expression in the following list itself returns a list, remove the
-    # brackets to avoid interpretation as a list of lists. If the expression
-    # returns a single list item then leave it as-is and remove this TODO comment.
-    ports = [module.this.ports_udp]
+    ports    = module.this.ports_udp
   }
 
   allow {
     protocol = "tcp"
-    # TF-UPGRADE-TODO: In Terraform v0.10 and earlier, it was sometimes necessary to
-    # force an interpolation expression to be interpreted as a list by wrapping it
-    # in an extra set of list brackets. That form was supported for compatibility in
-    # v0.11, but is no longer supported in Terraform v0.12.
-    #
-    # If the expression in the following list itself returns a list, remove the
-    # brackets to avoid interpretation as a list of lists. If the expression
-    # returns a single list item then leave it as-is and remove this TODO comment.
-    ports = [module.this.ports_tcp]
+    ports    = module.this.ports_tcp
   }
 
   source_ranges = ["0.0.0.0/0"]
@@ -44,7 +28,7 @@ resource "google_compute_firewall" "ssh" {
 
   allow {
     protocol = "tcp"
-    ports    = ["22"]
+    ports    = [22]
   }
 
   source_ranges = [trimspace(data.http.public_ipv4.body)]

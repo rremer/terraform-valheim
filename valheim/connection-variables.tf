@@ -15,8 +15,8 @@ variable "connection_private_key" {
 }
 
 variable "connection_port" {
-  type        = string
-  default     = "22"
+  type        = number
+  default     = 22
   description = "SSH remote port."
 }
 
