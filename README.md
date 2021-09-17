@@ -12,7 +12,7 @@ Some templates to deploy valheim server. Could be a lot more abstract, just need
 4. Run `gcloud auth application-default login` and accept the oauth prompt
 
 ### Setup terraform
-1. Download and install terraform 0.11.13
+1. Download and install terraform 1.0.7+
 2. Update `var.provider_project_id` in `provider-variables.tf` with the same project ID
 ... todo, generate ssh keys instead of the coded paths, assumes you have an ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub already
 3. Run `terraform init`

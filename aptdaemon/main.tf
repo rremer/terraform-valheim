@@ -1,16 +1,16 @@
 resource "null_resource" "provisioner" {
-  triggers {
-    user        = "${var.connection_user}"
-    host        = "${var.connection_host}"
-    private_key = "${sha1("${var.connection_private_key}")}"
-    port        = "${var.connection_port}"
+  triggers = {
+    user        = var.connection_user
+    host        = var.connection_host
+    private_key = sha1(var.connection_private_key)
+    port        = var.connection_port
   }
 
   connection {
-    user        = "${var.connection_user}"
-    host        = "${var.connection_host}"
-    private_key = "${var.connection_private_key}"
-    port        = "${var.connection_port}"
+    user        = var.connection_user
+    host        = var.connection_host
+    private_key = var.connection_private_key
+    port        = var.connection_port
   }
 
   provisioner "remote-exec" {
@@ -21,3 +21,4 @@ resource "null_resource" "provisioner" {
     ]
   }
 }
+
