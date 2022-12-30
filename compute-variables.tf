@@ -24,7 +24,7 @@ variable "compute_image_name" {
 
 variable "compute_image_family" {
   type        = string
-  default     = "ubuntu-2004-lts"
+  default     = "ubuntu-2204-lts"
   description = "The search token for a bootable image."
 }
 

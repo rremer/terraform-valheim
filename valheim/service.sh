@@ -6,6 +6,8 @@
 set -o nounset
 set -o errexit
 
+source "$(dirname ${0})/service.properties"
+
 data_path="/var/lib/valheim/${server_name}"
 mkdir -p "${data_path}/config"
 mkdir -p "${data_path}/data"

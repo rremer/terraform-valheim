@@ -35,6 +35,7 @@ DEBIAN_FRONTEND=noninteractive
 # general module properties
 module_name='${var.module_name}'
 module_resource_dir='${var.module_resource_dir}'
+module_properties='${var.module_properties}'
 module_install_basedir='${var.module_install_basedir}'
 module_install_dir='${var.module_install_basedir}/${var.module_name}'
 module_install_log='${var.module_install_log}'

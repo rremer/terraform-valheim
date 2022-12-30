@@ -12,6 +12,7 @@ mkdir -p "${module_install_dir}"
 adduser --system --no-create-home --home "${module_install_dir}" "${module_name}" || true
 addgroup --system "${module_name}" || true
 cp "${module_resource_dir}/${module_name}/service.sh" "${module_install_dir}/service.sh"
+cp "${module_resource_dir}/${module_name}/${module_properties}" "${module_install_dir}/service.properties"
 chown -R "${module_name}" "${module_install_dir}"
 
 # create the service unit
